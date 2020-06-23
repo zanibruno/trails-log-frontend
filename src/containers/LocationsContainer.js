@@ -14,7 +14,7 @@ class LocationsContainer extends React.Component {
 	render() {
 		return(
 			<div>
-				<LocationInput/>
+				<LocationInput/><br/><br/>
 				<Locations locations={this.props.locations}/>
 			</div>
 	)
