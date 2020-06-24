@@ -1,4 +1,6 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
+import TrailsContainer from '../containers/TrailsContainer.js'
 
 
 
@@ -6,11 +8,17 @@ import React from 'react'
 const Location = (props) => {
 
 	let location = props.locations[props.match.params.id - 1]
-	console.log(location)
+	// console.log(location)
+	console.log(props)
 	return(
-		<li>
+		<div>
+		<h2>
+		{location ? null : <Redirect to='/locations'/>}
 			{location ? location.name : null} - {location ? location.postcode : null}
-		</li>
+		
+		</h2>
+		<TrailsContainer location={location}/>
+		</div>
 	)
 
 }
