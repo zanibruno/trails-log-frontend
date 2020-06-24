@@ -16,6 +16,10 @@ class LocationInput extends React.Component {
 	handleSubmit = (event) => {
 		event.preventDefault()
 		this.props.addLocation(this.state)
+		this.setState({
+			postcode: '',
+			name: ''
+		})	
 	}
 
 	render() {
