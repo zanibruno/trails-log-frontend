@@ -9,8 +9,8 @@ class TrailsContainer extends React.Component {
 render() {
 	return(
 		<div>
-			<TrailInput/>
 			<Trails trails={this.props.location && this.props.location.trails}/>
+			<TrailInput location={this.props.location}/>
 		</div>
 	)
 }
