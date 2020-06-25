@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {Route} from'react-router-dom'
+import {Route, Switch} from'react-router-dom'
 import {fetchLocations} from '../actions/fetchLocations'
 import Locations from '../components/Locations.js'
 import Location from '../components/Location.js'
@@ -16,10 +16,11 @@ class LocationsContainer extends React.Component {
 	render() {
 		return(
 			<div>
-			<Route path='/locations/new' component={LocationInput}/>
-			<Route path='/locations/:id' render={(routerProps) => <Location {...routerProps} locations={this.props.locations}/>}/>
-			<Route exact path='/locations' render={(routerProps) => <Locations {...routerProps} locations={this.props.locations}/> } /> 
-			
+				<Switch>
+					<Route path='/locations/new' component={LocationInput}/>
+					<Route path='/locations/:id' render={(routerProps) => <Location {...routerProps} locations={this.props.locations}/>}/>
+					<Route path='/locations' render={(routerProps) => <Locations {...routerProps} locations={this.props.locations}/> } /> 
+				</Switch>
 			</div>
 	)
 
