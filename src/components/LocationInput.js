@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addLocation} from '../actions/addLocation.js'
+import '../styles/LocationInput.css'
 
 class LocationInput extends React.Component {
 
@@ -24,13 +25,13 @@ class LocationInput extends React.Component {
 
 	render() {
 		return(
-			<div>
+			<div className='container'>
 				<form onSubmit={this.handleSubmit}>
-				<label>Post Code:</label><br/>
+				<label for='post-code'>Post Code:</label><br/>
 					<input type='text' placeholder='Post Code' value={this.state.postcode} name='postcode' onChange={this.handleChange}/><br/>
-					<label>Name:</label><br/>
+					<label for='name'>Name:</label><br/>
 					<input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange}/><br/>
-					<input type='submit'/>
+					<input type='submit' value='Create new Location'/>
 				</form>
 			</div>
 		)
