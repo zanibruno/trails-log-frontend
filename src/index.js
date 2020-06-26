@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom'
 import locationReducer from './reducers/locationReducer.js'
+import Home from './containers/Home.js'
 
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -16,6 +17,7 @@ let store = createStore(locationReducer, composeEnhancer(applyMiddleware(thunk))
 ReactDOM.render(
 	<Provider store={store}>
 		<Router>
+			<Home/>
 			<App/>
 		</Router>
 	</Provider>
