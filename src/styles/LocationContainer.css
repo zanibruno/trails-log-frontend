@@ -1,0 +1,18 @@
+.location {
+		font-size: 20px;
+		font-family: Courier New;
+		margin: 10px;
+		color: black;
+
+}
+
+
+.location-list:first-child {
+	margin-top: 100px;
+	margin-left: 20px;
+}
+
+.location-list:not(:first-child) {
+	margin: 20px;
+	color: black;
+}

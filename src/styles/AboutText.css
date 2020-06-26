@@ -1,0 +1,12 @@
+.about-text {
+    position: absolute;
+    top: 10%;
+    left: 9%;
+    font-family: Courier New;
+}
+
+
+
+.about-text-desc {
+    font-size: 17px;
+}
