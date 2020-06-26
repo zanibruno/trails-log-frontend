@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { addTrail } from '../actions/addTrail'
+import '../styles/TrailInput.css'
+
 
 
 
@@ -43,19 +45,19 @@ class TrailInput extends React.Component {
 
 	render() {
 		return(
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<label>Trail Name:</label>
+			<div className='container'>
+				<form onSubmit={this.handleSubmit} className='trail-form'>
+					<label for='trail-name'>Trail Name:</label>
 					<input type='text' name='name' value={this.state.name} onChange={this.handleChange}/><br/>
-					<label>Trail Level:</label>
+					<label for='trail-level'>Trail Level:</label>
 					<select name='level' value={this.state.level} onChange={this.handleChange}>
 						{this.options()}
 					</select><br/>
-					<label>Trail Length:</label>
+					<label for='trail-length'>Trail Length:</label>
 					<input type='number' name='length' value={this.state.length} onChange={this.handleChange}/><br/>
-					<label>Trail Description:</label>
+					<label for='trail-description'>Trail Description:</label>
 					<input type='text' name='description' value={this.state.description} onChange={this.handleChange}/><br/>
-					<input type='submit'/>
+					<input type='submit' value='Create Trail'/>
 				</form>
 			</div>
 			)
