@@ -15,6 +15,15 @@ switch (action.type) {
 			}
 		})
 		return {...state, locations: locations}
+		case 'DELETE_TRAIL':
+		let locationsDel = state.locations.map(location => {
+			if(location.id === action.payload.id) {
+				return action.payload
+			} else {
+				return location
+			}
+		})
+		return {...state, locations: locationsDel}
 		default: 
 		return state
 	} 
