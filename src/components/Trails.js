@@ -13,12 +13,12 @@ const Trails = (props) => {
 	
 		return(
 			<div>
-				{props.trails && props.trails.map(trail => 
 					<ul className='trails-list'>
+				{props.trails && props.trails.map(trail => 
 					<li key={trail.id} className='trail'>Trail Name: {trail.name} -- Trail Level: {trail.level} -- Trail Length: {trail.length}m -- Trail Description: {trail.description}
 					<button value='delete' onClick={() => handleDelete(trail)} className='delete-btn'>Delete</button>
 					</li>
-					</ul>)}
+					)}</ul>
 			</div>
 			)
 

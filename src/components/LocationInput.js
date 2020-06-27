@@ -27,9 +27,9 @@ class LocationInput extends React.Component {
 		return(
 			<div className='container'>
 				<form onSubmit={this.handleSubmit}>
-				<label for='post-code'>Post Code:</label><br/>
+				<label htmlFor='post-code'>Post Code:</label><br/>
 					<input type='text' placeholder='Post Code' value={this.state.postcode} name='postcode' onChange={this.handleChange}/><br/>
-					<label for='name'>Name:</label><br/>
+					<label htmlFor='name'>Name:</label><br/>
 					<input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange}/><br/>
 					<input type='submit' value='Create new Location'/>
 				</form>

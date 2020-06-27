@@ -27,10 +27,9 @@ class TrailInput extends React.Component {
 		this.props.addTrail(this.state, this.props.location.id)
 		this.setState({
 			name: '',
-		level: '1',
-		length: '',
-		description: ''
-
+			level: '1',
+			length: '',
+			description: ''
 		})
 	}
 
@@ -38,7 +37,7 @@ class TrailInput extends React.Component {
 		let arr = []
 
 		for (let i = 1; i <= 10; i++) {
-			arr.push(<option>{i}</option>)
+			arr.push(<option key={i}>{i}</option>)
 		}
 		return arr
 	}
@@ -47,15 +46,15 @@ class TrailInput extends React.Component {
 		return(
 			<div className='container'>
 				<form onSubmit={this.handleSubmit} className='trail-form'>
-					<label for='trail-name'>Trail Name:</label>
+					<label htmlFor='trail-name'>Trail Name:</label>
 					<input type='text' name='name' value={this.state.name} onChange={this.handleChange}/><br/>
-					<label for='trail-level'>Trail Level:</label>
+					<label htmlFor='trail-level'>Trail Level:</label>
 					<select name='level' value={this.state.level} onChange={this.handleChange}>
 						{this.options()}
 					</select><br/>
-					<label for='trail-length'>Trail Length:</label>
+					<label htmlFor='trail-length'>Trail Length:</label>
 					<input type='number' name='length' value={this.state.length} onChange={this.handleChange}/><br/>
-					<label for='trail-description'>Trail Description:</label>
+					<label htmlFor='trail-description'>Trail Description:</label>
 					<input type='text' name='description' value={this.state.description} onChange={this.handleChange}/><br/>
 					<input type='submit' value='Create Trail'/>
 				</form>

@@ -7,23 +7,42 @@ import LocationInput from '../components/LocationInput.js'
 
 
 
-const Locations = (props) => {
+class Locations extends React.Component {
 
-	return(
+	state = {
+	}
 
-		<div>
-		<LocationInput/>
-			{props.locations.map(location => 
-				<ul className='location-list'>
-				<li key={location.id}>
-				<NavLink to={`/locations/${location.id}`} className='location'>{location.name}</NavLink>
-				</li>
-				</ul>
-				)}
+	handleLike = (locationId) => {
+		let count = 1
+		if( this.state[locationId]) {
+			this.setState({
+			[event.target.id]: this.state[event.target.id] + 1
+		})
+		} else {
+			this.setState({
+			[event.target.id]: count
+			})
+		}
+		
+	}
 
-		</div>
-		)
+	render() {
+		return(
 
+			<div>
+			<LocationInput/>
+					<ul className='location-list'>
+				{this.props.locations.map(location => 
+					<li key={location.id}>
+					<NavLink to={`/locations/${location.id}`} className='location'>{location.name}</NavLink>
+					<button id={location.id} onClick={() => this.handleLike(location.id)}>Likes: {this.state[location.id]}</button>
+					</li>
+					)}
+					</ul>
+
+			</div>
+			)
+	}
 }
 
 export default Locations
